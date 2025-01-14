@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <meta name="author" content="66160084">
+    <meta name="rachi" content="66160369">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
@@ -20,12 +20,15 @@
     <main>
 
         <div class="container">
-            <h1>Workshop #LARAVEL - FORM</h1>
+        <div class="container d-flex justify-content-center align-items-center" style="min-height: 10vh;">
+    <h1 class="text-center">Workshop สูตรคูณ #LARAVEL</h1>
+</div>
+
             <form action="{{url('/mycontroller')}}"
                 method="post">
                 @csrf
                 <div class="mb-3">
-                    <label for="typeNumber" class="form-label">Type a number to generate multiplication table</label>
+                    <label for="typeNumber" class="form-label">Type a numbers to generate a multiplication table.</label>
                     <input type="text" class="form-control" id="typeNumber" name="myinput">
 
                 </div>
@@ -34,7 +37,7 @@
 
             <div class='border mb-4'>
                 <div class=''>
-                    <h2 class=''>Mul-Table: {{$myinput}}</h2>
+                    <h2 class=''>Table: {{$myinput}}</h2>
                     <div class=''>
                         <?php for ($i = 1; $i <= 12; $i++) { ?>
 
