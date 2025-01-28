@@ -4,13 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class MyController extends Controller
+class Mycontroller extends Controller
 {
-    //
-    function myfunction(Request $req, $var1 = "")
+    public function myfunction(Request $req)
     {
-        $data["value_id"] = $var1;
-        $data["myinput"] = $req->input("myinput");
-        return view("myview", $data);
+        $data = [];//ตัวแปร
+        $data['myinput'] = $req->input('myinput'); //ส่วนกำหนดว่า myinput มีค่าเท่ากับ input 
+        return view('myview', $data);
     }
 }
