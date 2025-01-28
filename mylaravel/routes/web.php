@@ -10,6 +10,9 @@
     Route::get('/myview', function () {
         return view('myview');
     });
+
+    Route::post('/mycontroller', 
+    [MyController::class, 'processInput']);
     
     Route::get('/login',
     [App\Http\Controllers\LoginController::class, 'index']);
