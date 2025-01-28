@@ -1,0 +1,78 @@
+/* Custom Styling for Login Page */
+.login-page {
+    background-color: #f4f6f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 15px;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-logo a {
+    font-size: 36px;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.input-group-text {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+}
+
+.input-group .form-control {
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.social-auth-links .btn {
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.social-auth-links .btn i {
+    margin-right: 10px;
+}
+
+.social-auth-links .btn-primary {
+    background-color: #3b5998;
+    border-color: #3b5998;
+}
+
+.social-auth-links .btn-danger {
+    background-color: #db4437;
+    border-color: #db4437;
+}
+
+.mb-1 a, .mb-0 a {
+    color: #007bff;
+}
+
+.mb-1 a:hover, .mb-0 a:hover {
+    text-decoration: underline;
+}
