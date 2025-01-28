@@ -9,9 +9,6 @@ Route::get('/hello', function () {
 
 Route::get('/mycontroller/{id?}', [MyController::class,'myfunction']);
 Route::post('/mycontroller/{id?}', [MyController::class,'myfunction']);
-    
-Route::get('/login',
-[LoginController::class, 'index'])->name('login');
 
 Route::get('/login',
 [App\Http\Controllers\LoginController::class, 'index']);
