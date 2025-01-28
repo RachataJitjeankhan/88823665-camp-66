@@ -1,27 +1,16 @@
-    <?php
+<?php
 
-    use Illuminate\Support\Facades\Route;
-    use App\Http\Controllers\Mycontroller;
+use App\Http\Controllers\MyController;
+use Illuminate\Support\Facades\Route;
 
-    Route::get('/mycontroller/{id?}', [Mycontroller::class, 'myfunction']);
-    Route::post('/mycontroller/{id?}', [Mycontroller::class, 'myfunction']);
-    Route::post('/mycontroller', [MyController::class, 'processInput']);
+Route::get('/', function () {
+    return view('welcome');
+});
 
-    Route::get('/myview', function () {
-        return view('myview');
-    });
+Route::get('/hello', function () {
+    return "<h1>Hello World</h1>";
+});
 
-    Route::post('/mycontroller', 
-    [MyController::class, 'processInput']);
+Route::get('/mycontroller/{id?}', [MyController::class,'myfunction']);
+Route::post('/mycontroller/{id?}', [MyController::class,'myfunction']);
     
-    Route::get('/login',
-    [App\Http\Controllers\LoginController::class, 'index']);
-
-    Route::get('/home',
-    [App\Http\Controllers\HomeController::class, 'index']);
-
-    Route::get('/register',
-    [App\Http\Controllers\RegisterController::class, 'index']);
-
-    Route::get('/',
-    [App\Http\Controllers\HomeController::class, 'index']);

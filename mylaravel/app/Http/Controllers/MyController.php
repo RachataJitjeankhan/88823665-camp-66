@@ -6,13 +6,11 @@ use Illuminate\Http\Request;
 
 class MyController extends Controller
 {
-    public function processInput(Request $request)
+    //
+    function myfunction(Request $req, $var1 = "")
     {
-        // รับข้อมูลจากฟอร์ม
-        $myinput = $request->input('myinput');
-
-        // ส่งค่ากลับไปยัง view พร้อมข้อมูล
-        return view('myview', compact('myinput'));
+        $data["value_id"] = $var1;
+        $data["myinput"] = $req->input("myinput");
+        return view("myview", $data);
     }
 }
-
