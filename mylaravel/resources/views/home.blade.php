@@ -1,14 +1,14 @@
 @extends('layouts.default')
 
 @section('content')
-<div class="login-page" style="background: url('your-image-url.jpg') no-repeat center center fixed; background-size: cover;">
+<div class="login-page">
     <div class="login-box">
         <div class="login-logo">
             <a href="../index2.html"><b>Admin</b>LTE</a>
         </div>
-        <div class="card" style="border-radius: 10px; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+        <div class="card">
             <div class="card-body login-card-body">
-                <p class="login-box-msg" style="font-size: 18px; color: #333;">Sign in to start your session</p>
+                <p class="login-box-msg">Sign in to start your session</p>
                 <form action="../index3.html" method="post">
                     <div class="input-group mb-3">
                         <input type="email" class="form-control" placeholder="Email" required />
@@ -27,7 +27,7 @@
                         </div>
                         <div class="col-4">
                             <div class="d-grid gap-2">
-                                <button type="submit" class="btn btn-primary" style="background-color: #007bff; transition: 0.3s ease-in-out; border-radius: 5px;">Sign In</button>
+                                <button type="submit" class="btn btn-primary rounded-pill shadow-lg">Sign In</button>
                             </div>
                         </div>
                     </div>
@@ -50,3 +50,34 @@
     </div>
 </div>
 @endsection
+
+<style>
+    .login-box {
+        background: linear-gradient(135deg, #6e7dff, #4e5fff);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        padding: 30px;
+    }
+    .login-card-body {
+        background-color: #fff;
+        border-radius: 10px;
+    }
+    .form-control {
+        border-radius: 20px;
+        padding: 12px;
+    }
+    .btn {
+        padding: 10px 20px;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+    }
+    .btn:hover {
+        background-color: #4e5fff;
+        transform: scale(1.05);
+    }
+    .login-logo a {
+        font-size: 30px;
+        font-weight: bold;
+        color: #fff;
+    }
+</style>
