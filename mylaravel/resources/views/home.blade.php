@@ -1,15 +1,14 @@
 @extends('layouts.default')
 
 @section('content')
-<div class="login-page">
+<div class="login-page" style="background: url('your-image-url.jpg') no-repeat center center fixed; background-size: cover;">
     <div class="login-box">
         <div class="login-logo">
             <a href="../index2.html"><b>Admin</b>LTE</a>
         </div>
-        <!-- /.login-logo -->
-        <div class="card">
+        <div class="card" style="border-radius: 10px; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
             <div class="card-body login-card-body">
-                <p class="login-box-msg">Sign in to start your session</p>
+                <p class="login-box-msg" style="font-size: 18px; color: #333;">Sign in to start your session</p>
                 <form action="../index3.html" method="post">
                     <div class="input-group mb-3">
                         <input type="email" class="form-control" placeholder="Email" required />
@@ -19,7 +18,6 @@
                         <input type="password" class="form-control" placeholder="Password" required />
                         <div class="input-group-text"><span class="bi bi-lock-fill"></span></div>
                     </div>
-                    <!--begin::Row-->
                     <div class="row">
                         <div class="col-8">
                             <div class="form-check">
@@ -27,15 +25,12 @@
                                 <label class="form-check-label" for="flexCheckDefault"> Remember Me </label>
                             </div>
                         </div>
-                        <!-- /.col -->
                         <div class="col-4">
                             <div class="d-grid gap-2">
-                                <button type="submit" class="btn btn-primary">Sign In</button>
+                                <button type="submit" class="btn btn-primary" style="background-color: #007bff; transition: 0.3s ease-in-out; border-radius: 5px;">Sign In</button>
                             </div>
                         </div>
-                        <!-- /.col -->
                     </div>
-                    <!--end::Row-->
                 </form>
                 <div class="social-auth-links text-center mb-3 d-grid gap-2">
                     <p>- OR -</p>
@@ -46,15 +41,12 @@
                         <i class="bi bi-google me-2"></i> Sign in using Google+
                     </a>
                 </div>
-                <!-- /.social-auth-links -->
                 <p class="mb-1"><a href="forgot-password.html">I forgot my password</a></p>
                 <p class="mb-0">
                     <a href="register.html" class="text-center"> Register a new membership </a>
                 </p>
             </div>
-            <!-- /.login-card-body -->
         </div>
     </div>
-    <!-- /.login-box -->
 </div>
 @endsection
