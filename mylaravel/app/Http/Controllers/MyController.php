@@ -6,11 +6,9 @@ use Illuminate\Http\Request;
 
 class MyController extends Controller
 {
-    //
-    function myfunction(Request $req, $var1 = "")
+    public function processInput(Request $request)
     {
-        $data["value_id"] = $var1;
-        $data["myinput"] = $req->input("myinput");
-        return view("myview", $data);
+        $myinput = $request->input('myinput');
+        return view('myview', compact('myinput'));
     }
 }
