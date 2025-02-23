@@ -1,59 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <meta name="rachi" content="66160369">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
+    <title>ตารางแม่สูตรคูณ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+<body class="container mt-5">
+    <h1 class="text-center">ตารางแม่สูตรคูณ</h1>
 
-<body>
-    <main>
-
-        <div class="container">
-        <div class="container d-flex justify-content-center align-items-center" style="min-height: 10vh;">
-    <h1 class="text-center">Workshop สูตรคูณ #LARAVEL</h1>
-</div>
-
-            <form action="{{url('/mycontroller')}}"
-                method="post">
-                @csrf
-                <div class="mb-3">
-                    <label for="typeNumber" class="form-label">Type a numbers to generate a multiplication table.</label>
-                    <input type="text" class="form-control" id="typeNumber" name="myinput">
-
-                </div>
-                <button type="submit" name="submit" class="btn btn-primary">Generate</button>
-            </form>
-
-            <div class='border mb-4'>
-                <div class=''>
-                    <h2 class=''>Table: {{$myinput}}</h2>
-                    <div class=''>
-                        <?php for ($i = 1; $i <= 12; $i++) { ?>
-
-                            <div class=''>
-                                <p class='m-0'>{{$myinput}} x {{$i}} = {{$i * $myinput}}</p>
-                            </div>
-                        <?php } ?>
-                    </div>
-                </div>
-            </div>
+    <!-- ฟอร์ม -->
+    <form action="{{ url('mycontroller') }}" method="post" class="mb-4">
+        @csrf
+        <div class="mb-3">
+            <label for="myinput" class="form-label">Enter a Number:</label>
+            <input type="number" name="myinput" id="myinput" class="form-control" placeholder="Enter a number">
         </div>
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+        <button type="submit" class="btn btn-primary">สร้างตาราง</button>
+    </form>
 
+    <!-- ตารางสูตรคูณ -->
+    @if(isset($myinput) && is_numeric($myinput))
+        <h2 class="text-center">ตารางแม่สูตรคูณ แม่ {{ $myinput }}</h2>
+        <ul class="list-group">
+            @for($i = 1; $i <= 12; $i++)
+                <li class="list-group-item">
+                    {{ $myinput }} x {{ $i }} = {{ $myinput * $i }}
+                </li>
+            @endfor
+        </ul>
+    @endif
 </body>
-
 </html>
